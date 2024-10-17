@@ -65,12 +65,12 @@ class Config:
 
     @classmethod
     def from_yaml(cls, yaml_file: Union[str, Path]) -> Self:
-        with open(yaml_file, 'r') as f:
+        with open(yaml_file, "r") as f:
             config_dict = yaml.safe_load(f)
         return cls(**config_dict)
 
     def to_yaml(self, yaml_file: Union[str, Path]) -> None:
-        with open(yaml_file, 'w') as f:
+        with open(yaml_file, "w") as f:
             yaml.dump(self.__dict__, f)
 
     def __post_init__(self):

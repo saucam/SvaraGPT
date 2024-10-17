@@ -1,6 +1,9 @@
-import pytest
 from pathlib import Path
+
+import pytest
+
 from tvarallm.config import Config
+
 
 def test_config_from_yaml():
     # Create a temporary YAML file
