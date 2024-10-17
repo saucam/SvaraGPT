@@ -1,0 +1,62 @@
+[project]
+name = "tvarallm"
+dynamic = ["version"]
+description = "TvaraLLM: A high-performance, minimalistic framework for LLM workflows"
+readme = "README.md"
+authors = [
+    {name = "Yash Datta", email = "yd2590@columbia.edu"},
+]
+license = {file = "LICENSE"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache 2.0 License",
+    "Operating System :: OS Independent",
+]
+keywords = ["LLM", "AI", "NLP", "machine learning"]
+dependencies = [
+    "torch>=2.2.0",
+    "tqdm>=4.66.0",
+]
+requires-python = ">=3.9"
+
+[project.urls]
+Homepage = "https://github.com/saucam/TvaraLLM"
+"Bug Tracker" = "https://github.com/saucam/TvaraLLM/issues"
+
+[tool.setuptools_scm]
+write_to = "tvarallm/_version.py"
+
+[tool.setuptools]
+packages = ["tvarallm"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "mypy>=0.910",
+    "flake8>=3.9",
+]
+
+[build-system]
+requires = ["setuptools>=68.2.2", "wheel>=0.41.2", "setuptools_scm>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+addopts = "--cov=tvarallm"
+testpaths = [
+    "tests",
+]
+
+[tool.mypy]
+mypy_path = "tvarallm"
+check_untyped_defs = true
+disallow_any_generics = true
+ignore_missing_imports = true
+no_implicit_optional = true
+show_error_codes = true
+strict_equality = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unreachable = true
+warn_unused_configs = true
+no_implicit_reexport = true
