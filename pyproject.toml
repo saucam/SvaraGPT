@@ -12,12 +12,16 @@ classifiers = [
     "License :: OSI Approved :: Apache 2.0 License",
     "Operating System :: OS Independent",
 ]
-keywords = ["LLM", "AI", "NLP", "machine learning"]
+keywords = ["LLM", "AI", "NLP", "machine learning", "inference", "distributed"]
 dependencies = [
     "torch>=2.2.0",
     "tqdm>=4.66.0",
+    "pyyaml>=5.4",
+    "fastapi>=0.68.0",
+    "uvicorn>=0.15.0",
+    "pydantic>=1.8.2",
 ]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 
 [project.urls]
 Homepage = "https://github.com/saucam/TvaraLLM"
@@ -35,6 +39,8 @@ dev = [
     "pytest-cov>=2.0",
     "mypy>=0.910",
     "flake8>=3.9",
+    "black>=21.9b0",
+    "isort>=5.9.3",
 ]
 
 [build-system]
@@ -60,3 +66,11 @@ warn_return_any = true
 warn_unreachable = true
 warn_unused_configs = true
 no_implicit_reexport = true
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+line_length = 100
