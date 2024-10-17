@@ -17,13 +17,19 @@ conda create -n tvarallm python=3.12
 conda activate tvarallm
 ```
 
-Run the tests:
+Install the dependencies and run the pre-commit hooks:
 
 ```bash
 # install dependencies
 pip install -e .[dev]
 
-# run tests
+# run pre-commit hooks
+pre-commit install
+```
+
+Run the tests:
+
+```bash
 cd tvarallm
 pytest --cov=tvarallm tests/
 ```

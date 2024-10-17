@@ -27,12 +27,6 @@ requires-python = ">=3.10"
 Homepage = "https://github.com/saucam/TvaraLLM"
 "Bug Tracker" = "https://github.com/saucam/TvaraLLM/issues"
 
-[tool.setuptools_scm]
-write_to = "tvarallm/_version.py"
-
-[tool.setuptools]
-packages = ["tvarallm"]
-
 [project.optional-dependencies]
 dev = [
     "pytest>=6.0",
@@ -40,7 +34,8 @@ dev = [
     "mypy>=0.910",
     "flake8>=3.9",
     "black>=21.9b0",
-    "isort>=5.9.3",
+    "isort>=5.12.0",
+    "pre-commit",
 ]
 
 [build-system]
@@ -52,6 +47,12 @@ addopts = "--cov=tvarallm"
 testpaths = [
     "tests",
 ]
+
+[tool.setuptools_scm]
+write_to = "tvarallm/_version.py"
+
+[tool.setuptools]
+packages = ["tvarallm"]
 
 [tool.mypy]
 mypy_path = "tvarallm"
